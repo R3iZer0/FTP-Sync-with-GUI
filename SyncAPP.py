@@ -7,16 +7,20 @@ import configparser
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
+#dir to the assets
+def relative_to_assets(file_path):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    assets_path = os.path.join(script_dir, "tkinter designs", "build", "assets", "frame0")
+    return os.path.join(assets_path, file_path)#if this doesnt work for you check the code down bellow 
 
 
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\\Users\\R3i\\Downloads\\FTP-Sync-with-GUI\\FTP-Sync-with-GUI\\tkinter designs\\build\\assets\\frame0")
 
 
+#OUTPUT_PATH = Path(__file__).parent
+#ASSETS_PATH = OUTPUT_PATH / Path(r"C:\\Users\\User\\Downloads\\FTP-Sync-with-GUI\\FTP-Sync-with-GUI\\tkinter designs\\build\\assets\\frame0")
 
-
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+#def relative_to_assets(path: str) -> Path:
+#    return ASSETS_PATH / Path(path)
 
 
 # Load or create a configuration file
@@ -69,7 +73,7 @@ def sync_winscp_folders(host, username, password, local_path, remote_path, sync_
     winscp_path = os.path.join(user_home, "AppData", "Local", "Programs", "WinSCP", "WinSCP.exe")#if this doesnt work 
     #try the line down bellow 
     
-    #winscp_path = r"C:\\Users\\R3i\\AppData\\Local\\Programs\\WinSCP\\WinSCP.exe"  # Replace with your WinSCP installation path
+    #winscp_path = r"C:\\Users\\user\\AppData\\Local\\Programs\\WinSCP\\WinSCP.exe"  # Replace with your WinSCP installation path
     try:
         subprocess.run([winscp_path, "/console", f"/script={os.path.abspath(script_filename)}"])
         print("Synchronization complete.")
