@@ -18,3 +18,9 @@ pip install -r requirements.txt
 ```
 python/python3 SyncAPP.py
 ```
+<p align="center">
+    <img src="https://img.shields.io/github/last-commit/R3iZer0/FTP-Sync-with-GUI">
+    <img src="https://img.shields.io/github/contributors/R3iZer0/FTP-Sync-with-GUI">
+    <img src="https://img.shields.io/github/issues/R3iZer0/FTP-Sync-with-GUI?label=issues">
+    <img src="https://img.shields.io/github/stars/R3iZer0/FTP-Sync-with-GUIr">
+  </p>
